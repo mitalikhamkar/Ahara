@@ -1,31 +1,41 @@
 import { useState } from 'react'
 import WelcomePage from './pages/Welcomepage'
-import CreateAccountPage from './pages/CreateAccountPage'
-import LoginPage from './pages/LoginPage'
-import DashboardPage from './pages/DashboardPage'
+import CreateAccountPage from './pages/CreateAccountpage'
+import LoginPage from './pages/Loginpage'
+import DashboardPage from './pages/Dashboardpage'
+import MealBuilderPage from './pages/MealBuilderpage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('welcome')
 
-  if (currentPage === 'dashboard') return <DashboardPage onLogout={() => setCurrentPage('welcome')} />
+  const nav = {
+    toDashboard: () => setCurrentPage('dashboard'),
+    toMealBuilder: () => setCurrentPage('meal-builder'),
+    toWelcome: () => setCurrentPage('welcome'),
+    toLogin: () => setCurrentPage('login'),
+    toCreateAccount: () => setCurrentPage('create-account'),
+  }
+
+  if (currentPage === 'dashboard') return <DashboardPage onLogout={nav.toWelcome} onNav={nav} />
+  if (currentPage === 'meal-builder') return <MealBuilderPage onNav={nav} />
   if (currentPage === 'create-account') return (
     <CreateAccountPage
-      onBack={() => setCurrentPage('welcome')}
-      onLoginClick={() => setCurrentPage('login')}
-      onComplete={() => setCurrentPage('dashboard')}
+      onBack={nav.toWelcome}
+      onLoginClick={nav.toLogin}
+      onComplete={nav.toDashboard}
     />
   )
   if (currentPage === 'login') return (
     <LoginPage
-      onBack={() => setCurrentPage('welcome')}
-      onCreateAccount={() => setCurrentPage('create-account')}
-      onComplete={() => setCurrentPage('dashboard')}
+      onBack={nav.toWelcome}
+      onCreateAccount={nav.toCreateAccount}
+      onComplete={nav.toDashboard}
     />
   )
   return (
     <WelcomePage
-      onCreateAccount={() => setCurrentPage('create-account')}
-      onLogin={() => setCurrentPage('login')}
+      onCreateAccount={nav.toCreateAccount}
+      onLogin={nav.toLogin}
     />
   )
 }
