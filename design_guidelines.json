@@ -1,0 +1,52 @@
+{
+  "theme_strategy": {
+    "mode": "light",
+    "rationale": "Nutrition and health platforms benefit from a clean, bright, and hygienic aesthetic. The light theme with warm off-white backgrounds evokes organic health and daylight, contrasting perfectly with the rich, realistic colors of food ingredients.",
+    "colors": {
+      "background": "#FAFAF7",
+      "surface": "#FFFFFF",
+      "secondary_background": "#F3F5F2",
+      "primary_accent": "#6FA67A",
+      "secondary_accent": "#C8A97E",
+      "highlight_accent": "#7EA8D9",
+      "text_primary": "#1F2933",
+      "text_secondary": "#667085",
+      "border": "#E5E7EB",
+      "success": "#6FA67A",
+      "warning": "#C8A97E",
+      "danger": "#EF4444"
+    }
+  },
+  "typography": {
+    "font_family_heading": "Outfit, sans-serif",
+    "font_family_body": "Manrope, sans-serif",
+    "font_family_mono": "JetBrains Mono, monospace",
+    "scales": {
+      "h1": "text-5xl sm:text-6xl font-semibold tracking-tight leading-none",
+      "h2": "text-3xl sm:text-4xl font-semibold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-medium tracking-tight",
+      "body": "text-base leading-relaxed text-[#1F2933]",
+      "caption": "text-sm text-[#667085]",
+      "metric": "font-mono text-2xl font-bold tracking-tight"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous, breathable layouts with an asymmetrical bento-box dashboard grid.",
+    "container_radius": "rounded-2xl to rounded-3xl for major panels, rounded-xl for inner cards.",
+    "borders": "1px solid #E5E7EB. No heavy box-shadows; subtle layered shadows (shadow-sm) to differentiate overlapping panels."
+  },
+  "motion_and_interaction": {
+    "philosophy": "Smooth, premium, non-bouncing (easing: cubic-bezier(0.16, 1, 0.3, 1))",
+    "hover_states": "Subtle -translate-y-1 with slightly enhanced shadow.",
+    "transitions": "transition-all duration-300 ease-out"
+  },
+  "component_styles": {
+    "navigation": "Transparent background fading into glassmorphism (backdrop-blur-xl bg-white/70) when scrolling. Fixed at the top.",
+    "buttons": "Pill-shaped (rounded-full) or smooth rounded-lg. Primary buttons use #6FA67A background with white text.",
+    "cards": "bg-[#FFFFFF] rounded-2xl border border-[#E5E7EB] p-6.",
+    "meal_builder": {
+      "plate_container": "Centered ceramic-plate look; food dropped onto an absolute-positioned area.",
+      "ingredient_gallery": "Horizontal scrolling flex container (gap-4), scrollbar hidden."
+    }
+  }
+}
